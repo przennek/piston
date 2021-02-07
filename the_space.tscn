@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://the_space.gd" type="Script" id=2]
+[ext_resource path="res://ClippedCamera.gd" type="Script" id=3]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 10, 10, 10 )
+
+[node name="the_space" type="Spatial"]
+transform = Transform( 0.997353, 0, 0, 0, 0.997353, 0, 0, 0, 0.997353, 0, 0, 0.000279941 )
+script = ExtResource( 2 )
+
+[node name="Area" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( -0.42561, -0.759207, 0.492404, 0.806707, -0.564863, -0.173648, 0.409975, 0.323319, 0.852868, -0.000975087, 0, -0.00929583 )
+shape = SubResource( 1 )
+__meta__ = {
+"_editor_description_": "dupa
+"
+}
+
+[node name="TextureRect" type="TextureRect" parent="Area/CollisionShape"]
+margin_left = 151.0
+margin_top = 82.0
+margin_right = 215.0
+margin_bottom = 146.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="clipped_camera" type="ClippedCamera" parent="."]
+transform = Transform( 1.00265, 0, 0, 0, 1.00265, 0, 0, 0, 1.00265, -6.5007e-05, 0, -0.000130011 )
+script = ExtResource( 3 )
